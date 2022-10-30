@@ -5,3 +5,7 @@ export * from './sucursal-empleado.controller';
 export * from './empleado-sucursal.controller';
 export * from './sucursal-cliente.controller';
 export * from './cliente-sucursal.controller';
+export * from './cliente.controller';
+export * from './empleado.controller';
+export * from './empresa.controller';
+export * from './sucursal.controller';
