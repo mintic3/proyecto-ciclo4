@@ -1,3 +1,0 @@
-User:ADMIN
-Pass:ADMIN
-link de conexion: mongodb+srv://ADMIN:<ADMIN>@clusterproyecfinal4.ccx8cgd.mongodb.net/test
