@@ -10,19 +10,25 @@ export class Sucursal extends Entity {
     id: true,
     generated: true,
   })
-  id_sucursal?: string;
+  id?: string;
 
   @property({
     type: 'string',
     required: true,
   })
-  direcion: string;
+  direccion: string;
 
   @property({
     type: 'string',
     required: true,
   })
   telefono: string;
+
+  @property({
+    type: 'string',
+    required: true,
+  })
+  adminstrador: string;
 
   @property({
     type: 'string',
@@ -35,12 +41,6 @@ export class Sucursal extends Entity {
     required: true,
   })
   user: string;
-
-  @property({
-    type: 'string',
-    required: true,
-  })
-  administrador: string;
 
   @belongsTo(() => Empresa)
   empresaId: string;

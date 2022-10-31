@@ -31,7 +31,7 @@ export class EmpleadoSucursalController {
     },
   })
   async getSucursal(
-    @param.path.string('id') id: typeof Empleado.prototype.id_empleado,
+    @param.path.string('id') id: typeof Empleado.prototype.id,
   ): Promise<Sucursal> {
     return this.empleadoRepository.sucursal(id);
   }

@@ -31,7 +31,7 @@ export class SucursalEmpresaController {
     },
   })
   async getEmpresa(
-    @param.path.string('id') id: typeof Sucursal.prototype.id_sucursal,
+    @param.path.string('id') id: typeof Sucursal.prototype.id,
   ): Promise<Empresa> {
     return this.sucursalRepository.empresa(id);
   }

@@ -7,7 +7,7 @@ export class Cliente extends Entity {
     id: true,
     generated: true,
   })
-  id_cliente?: string;
+  id?: string;
 
   @property({
     type: 'string',
@@ -19,7 +19,13 @@ export class Cliente extends Entity {
     type: 'string',
     required: true,
   })
-  direcion: string;
+  direccion: string;
+
+  @property({
+    type: 'string',
+    required: true,
+  })
+  email: string;
 
   @property({
     type: 'string',
@@ -37,13 +43,13 @@ export class Cliente extends Entity {
     type: 'string',
     required: true,
   })
-  n_documento: string;
+  tipo_documento: string;
 
   @property({
     type: 'string',
     required: true,
   })
-  tipo_documento: string;
+  n_documento: string;
 
   @property({
     type: 'string',

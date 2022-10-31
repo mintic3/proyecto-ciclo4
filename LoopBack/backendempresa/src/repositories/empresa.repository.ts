@@ -6,11 +6,11 @@ import {SucursalRepository} from './sucursal.repository';
 
 export class EmpresaRepository extends DefaultCrudRepository<
   Empresa,
-  typeof Empresa.prototype.id_empresa,
+  typeof Empresa.prototype.id,
   EmpresaRelations
 > {
 
-  public readonly sucursals: HasManyRepositoryFactory<Sucursal, typeof Empresa.prototype.id_empresa>;
+  public readonly sucursals: HasManyRepositoryFactory<Sucursal, typeof Empresa.prototype.id>;
 
   constructor(
     @inject('datasources.mongodbconexion') dataSource: MongodbconexionDataSource, @repository.getter('SucursalRepository') protected sucursalRepositoryGetter: Getter<SucursalRepository>,

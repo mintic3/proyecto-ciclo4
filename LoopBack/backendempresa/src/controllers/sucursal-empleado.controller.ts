@@ -54,18 +54,18 @@ export class SucursalEmpleadoController {
     },
   })
   async create(
-    @param.path.string('id') id: typeof Sucursal.prototype.id_sucursal,
+    @param.path.string('id') id: typeof Sucursal.prototype.id,
     @requestBody({
       content: {
         'application/json': {
           schema: getModelSchemaRef(Empleado, {
             title: 'NewEmpleadoInSucursal',
-            exclude: ['id_empleado'],
+            exclude: ['id'],
             optional: ['sucursalId']
           }),
         },
       },
-    }) empleado: Omit<Empleado, 'id_empleado'>,
+    }) empleado: Omit<Empleado, 'id'>,
   ): Promise<Empleado> {
     return this.sucursalRepository.empleados(id).create(empleado);
   }

@@ -54,18 +54,18 @@ export class SucursalClienteController {
     },
   })
   async create(
-    @param.path.string('id') id: typeof Sucursal.prototype.id_sucursal,
+    @param.path.string('id') id: typeof Sucursal.prototype.id,
     @requestBody({
       content: {
         'application/json': {
           schema: getModelSchemaRef(Cliente, {
             title: 'NewClienteInSucursal',
-            exclude: ['id_cliente'],
+            exclude: ['id'],
             optional: ['sucursalId']
           }),
         },
       },
-    }) cliente: Omit<Cliente, 'id_cliente'>,
+    }) cliente: Omit<Cliente, 'id'>,
   ): Promise<Cliente> {
     return this.sucursalRepository.clientes(id).create(cliente);
   }

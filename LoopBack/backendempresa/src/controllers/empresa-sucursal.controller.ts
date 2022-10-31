@@ -54,18 +54,18 @@ export class EmpresaSucursalController {
     },
   })
   async create(
-    @param.path.string('id') id: typeof Empresa.prototype.id_empresa,
+    @param.path.string('id') id: typeof Empresa.prototype.id,
     @requestBody({
       content: {
         'application/json': {
           schema: getModelSchemaRef(Sucursal, {
             title: 'NewSucursalInEmpresa',
-            exclude: ['id_sucursal'],
+            exclude: ['id'],
             optional: ['empresaId']
           }),
         },
       },
-    }) sucursal: Omit<Sucursal, 'id_sucursal'>,
+    }) sucursal: Omit<Sucursal, 'id'>,
   ): Promise<Sucursal> {
     return this.empresaRepository.sucursals(id).create(sucursal);
   }

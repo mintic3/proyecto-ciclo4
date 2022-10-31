@@ -8,7 +8,7 @@ export class Empresa extends Entity {
     id: true,
     generated: true,
   })
-  id_empresa?: string;
+  id?: string;
 
   @property({
     type: 'string',
@@ -26,7 +26,13 @@ export class Empresa extends Entity {
     type: 'string',
     required: true,
   })
-  direcion: string;
+  telefono: string;
+
+  @property({
+    type: 'string',
+    required: true,
+  })
+  direccion: string;
 
   @property({
     type: 'string',

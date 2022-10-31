@@ -8,15 +8,15 @@ import {ClienteRepository} from './cliente.repository';
 
 export class SucursalRepository extends DefaultCrudRepository<
   Sucursal,
-  typeof Sucursal.prototype.id_sucursal,
+  typeof Sucursal.prototype.id,
   SucursalRelations
 > {
 
-  public readonly empresa: BelongsToAccessor<Empresa, typeof Sucursal.prototype.id_sucursal>;
+  public readonly empresa: BelongsToAccessor<Empresa, typeof Sucursal.prototype.id>;
 
-  public readonly empleados: HasManyRepositoryFactory<Empleado, typeof Sucursal.prototype.id_sucursal>;
+  public readonly empleados: HasManyRepositoryFactory<Empleado, typeof Sucursal.prototype.id>;
 
-  public readonly clientes: HasManyRepositoryFactory<Cliente, typeof Sucursal.prototype.id_sucursal>;
+  public readonly clientes: HasManyRepositoryFactory<Cliente, typeof Sucursal.prototype.id>;
 
   constructor(
     @inject('datasources.mongodbconexion') dataSource: MongodbconexionDataSource, @repository.getter('EmpresaRepository') protected empresaRepositoryGetter: Getter<EmpresaRepository>, @repository.getter('EmpleadoRepository') protected empleadoRepositoryGetter: Getter<EmpleadoRepository>, @repository.getter('ClienteRepository') protected clienteRepositoryGetter: Getter<ClienteRepository>,
