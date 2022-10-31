@@ -1,7 +1,7 @@
 import {Entity, model, property, belongsTo} from '@loopback/repository';
 import {Sucursal} from './sucursal.model';
 
-@model({settings: {strict: false}})
+@model()
 export class Empleado extends Entity {
   @property({
     type: 'string',
@@ -11,7 +11,7 @@ export class Empleado extends Entity {
   id_empleado?: string;
 
   @property({
-    type: 'string',
+    type: 'number',
     required: true,
   })
   salario: string;
@@ -48,11 +48,6 @@ export class Empleado extends Entity {
 
   @belongsTo(() => Sucursal)
   sucursalId: string;
-  // Define well-known properties here
-
-  // Indexer property to allow additional data
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [prop: string]: any;
 
   constructor(data?: Partial<Empleado>) {
     super(data);

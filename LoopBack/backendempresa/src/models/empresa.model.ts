@@ -1,7 +1,7 @@
 import {Entity, model, property, hasMany} from '@loopback/repository';
 import {Sucursal} from './sucursal.model';
 
-@model({settings: {strict: false}})
+@model()
 export class Empresa extends Entity {
   @property({
     type: 'string',
@@ -26,12 +26,6 @@ export class Empresa extends Entity {
     type: 'string',
     required: true,
   })
-  telefono: string;
-
-  @property({
-    type: 'string',
-    required: true,
-  })
   direcion: string;
 
   @property({
@@ -39,6 +33,7 @@ export class Empresa extends Entity {
     required: true,
   })
   email: string;
+
   @property({
     type: 'string',
     required: true,
@@ -47,11 +42,6 @@ export class Empresa extends Entity {
 
   @hasMany(() => Sucursal)
   sucursals: Sucursal[];
-  // Define well-known properties here
-
-  // Indexer property to allow additional data
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [prop: string]: any;
 
   constructor(data?: Partial<Empresa>) {
     super(data);

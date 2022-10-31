@@ -3,7 +3,7 @@ import {Empresa} from './empresa.model';
 import {Empleado} from './empleado.model';
 import {Cliente} from './cliente.model';
 
-@model({settings: {strict: false}})
+@model()
 export class Sucursal extends Entity {
   @property({
     type: 'string',
@@ -28,12 +28,6 @@ export class Sucursal extends Entity {
     type: 'string',
     required: true,
   })
-  adminstrador: string;
-
-  @property({
-    type: 'string',
-    required: true,
-  })
   password: string;
 
   @property({
@@ -41,6 +35,12 @@ export class Sucursal extends Entity {
     required: true,
   })
   user: string;
+
+  @property({
+    type: 'string',
+    required: true,
+  })
+  administrador: string;
 
   @belongsTo(() => Empresa)
   empresaId: string;
@@ -50,11 +50,6 @@ export class Sucursal extends Entity {
 
   @hasMany(() => Cliente)
   clientes: Cliente[];
-  // Define well-known properties here
-
-  // Indexer property to allow additional data
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [prop: string]: any;
 
   constructor(data?: Partial<Sucursal>) {
     super(data);
