@@ -1,3 +1,4 @@
+import { service } from '@loopback/core';
 import {
   Count,
   CountSchema,
@@ -19,11 +20,14 @@ import {
 } from '@loopback/rest';
 import {Sucursal} from '../models';
 import {SucursalRepository} from '../repositories';
+import { AutenticacionService } from '../services';
 
 export class SucursalController {
   constructor(
     @repository(SucursalRepository)
     public sucursalRepository : SucursalRepository,
+    @service(AutenticacionService)
+    public servicioAutenticacion: AutenticacionService,
   ) {}
 
   @post('/sucursals')
