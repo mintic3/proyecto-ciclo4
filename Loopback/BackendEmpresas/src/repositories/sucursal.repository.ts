@@ -1,10 +1,10 @@
-import {inject, Getter} from '@loopback/core';
-import {DefaultCrudRepository, repository, HasOneRepositoryFactory, HasManyRepositoryFactory} from '@loopback/repository';
+import {Getter, inject} from '@loopback/core';
+import {DefaultCrudRepository, HasManyRepositoryFactory, HasOneRepositoryFactory, repository} from '@loopback/repository';
 import {MongoconexionDataSource} from '../datasources';
-import {Sucursal, SucursalRelations, Empresa, Empleado, Cliente} from '../models';
-import {EmpresaRepository} from './empresa.repository';
-import {EmpleadoRepository} from './empleado.repository';
+import {Cliente, Empleado, Empresa, Sucursal, SucursalRelations} from '../models';
 import {ClienteRepository} from './cliente.repository';
+import {EmpleadoRepository} from './empleado.repository';
+import {EmpresaRepository} from './empresa.repository';
 
 export class SucursalRepository extends DefaultCrudRepository<
   Sucursal,

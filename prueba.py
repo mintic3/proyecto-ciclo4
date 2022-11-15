@@ -8,7 +8,6 @@ from flask import Flask
 import os
 from twilio.rest import Client
 from flask import request
-import os
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 

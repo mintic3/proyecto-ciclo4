@@ -1,4 +1,4 @@
-import {Entity, model, property, hasMany} from '@loopback/repository';
+import {Entity, hasMany, model, property} from '@loopback/repository';
 import {Sucursal} from './sucursal.model';
 
 @model({settings: {strict: false}})
@@ -56,6 +56,12 @@ export class Cliente extends Entity {
     type: 'string',
   })
   sucursalId?: string;
+
+  @property({
+    type: 'string',
+    required: false,
+  })
+  clave: string;
 
   @hasMany(() => Sucursal)
   sucursals: Sucursal[];
