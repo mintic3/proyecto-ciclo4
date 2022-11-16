@@ -11,6 +11,7 @@ export class SucursalRepository extends DefaultCrudRepository<
   typeof Sucursal.prototype.id,
   SucursalRelations
 > {
+  [x: string]: any;
 
   public readonly empresa: BelongsToAccessor<Empresa, typeof Sucursal.prototype.id>;
 

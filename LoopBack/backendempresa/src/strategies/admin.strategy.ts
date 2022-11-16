@@ -11,9 +11,7 @@ export class EstrategiaAdministrador implements AuthenticationStrategy{
 
 constructor(
   @service(AutenticacionService)
-  public servicioAutenticacion: AutenticacionService
-
-  ){
+  public servicioAutenticacion: AutenticacionService){
 
   }
 
