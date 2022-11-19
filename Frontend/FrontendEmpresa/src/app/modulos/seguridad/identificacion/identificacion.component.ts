@@ -16,6 +16,13 @@ export class IdentificacionComponent implements OnInit {
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    
+  }
+  IdentificarUsuario(){
+    let usuario = this.fgValidador.controls["usuario"].value;
+    let clave = this.fgValidador.controls["clave"].value;
+    alert(usuario)
+    alert(clave)
   }
 
 }
