@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-identificacion',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IdentificacionComponent implements OnInit {
 
-  constructor() { }
+  fgValidador:FormGroup = this.fb.group({
+    'usuario': ['', [Validators.required, Validators.email]],
+    'clave': ['', [Validators.required]]
+  })
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
   }
