@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { SeguridadRoutingModule } from './seguridad-routing.module';
 import { CambioClaveComponent } from './cambio-clave/cambio-clave.component';
 import { IdentificacionComponent } from './identificacion/identificacion.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +15,9 @@ import { IdentificacionComponent } from './identificacion/identificacion.compone
   ],
   imports: [
     CommonModule,
-    SeguridadRoutingModule
+    SeguridadRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class SeguridadModule { }
